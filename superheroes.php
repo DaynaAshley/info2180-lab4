@@ -63,10 +63,39 @@ $superheroes = [
   ], 
 ];
 
+        $query = $_REQUEST["query"];
+
+        if ($query==""){
+            echo "<ul>";
+            foreach ($superheroes as $superhero){
+                echo "<li>". $superhero['alias']."</li>";
+            }
+            echo "<ul>";
+        }
+        else{
+
+            $id = array_search($query, array_column($superheroes, 'name'));
+            $id1 =array_search($query, array_column($superheroes, 'alias'));
+
+        
+            if ($id==""){
+                $index=$id1;
+            }
+            else{
+                $index=$id;
+            }
+
+            if (gettype($index)=="integer") {
+                echo "<h3>". $superheroes[$index]['alias']. "<h3>";
+                echo "<h4> A.K.A ". $superheroes[$index]['name']."<h4>";
+                echo "<p>" .$superheroes[$index]['biography']."<p>";
+                
+            }
+            else{
+                echo "<p>Superhero not found<p>";
+            }
+        }
+        
 ?>
 
-<ul>
-<?php foreach ($superheroes as $superhero): ?>
-  <li><?= $superhero['alias']; ?></li>
-<?php endforeach; ?>
-</ul>
+

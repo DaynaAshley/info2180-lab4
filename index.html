@@ -4,14 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>INFO2180 - Avenger's Superheros</title>
+    <title>INFO2180 - Avenger's Superheroes</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="app.js"></script>
   </head>
   <body>
-    <div class="container">
-        <h1>Avengers Character Search</h1>
-        <button type="button" id="searchbtn" class="btn">Search</button>
+    <header>
+      <div class="container">
+          <h1>Avengers Character Search</h1>
       </div>
-    </body>
-  </html>
+    </header>
+
+    <main>
+      <div class="search">
+          <p>Search by Full Name or Alias</p>
+          <input type="text" id="fname" name="fname" placeholder="e.g. Captain America or Steve Rodgers">
+          <button type="button" id="searchbtn" class="btn">Search</button>
+      
+          <h2>RESULT</h2>
+          <hr>
+          <div id="result"></div>
+      </div>
+    </main> 
+ 
+  </body>
+</html>
