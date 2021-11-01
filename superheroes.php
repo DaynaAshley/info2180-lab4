@@ -65,6 +65,7 @@ $superheroes = [
 
         $query = $_REQUEST["query"];
         $query=strip_tags($query);
+:x
 
         if ($query==""){
             echo "<ul>";
