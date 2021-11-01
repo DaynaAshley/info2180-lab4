@@ -64,7 +64,7 @@ $superheroes = [
 ];
 
         $query = $_REQUEST["query"];
-
+        $query=strip_tags($query);
         if ($query==""){
             echo "<ul>";
             foreach ($superheroes as $superhero){
